@@ -59,7 +59,9 @@ def web_scraping( num_paginas):
                 ## El precio tiene un formato moneda (dado en libras)
                 ## Se quita el signo de libras £
                 #print(precio_fstring)
-                precio = float(precio_fstring.replace("Â£", ""))
+                precio_fstring = precio_fstring.replace("Â", "")
+                precio_fstring = precio_fstring.replace("£", "")
+                precio = float(precio_fstring)
 
                 ## Se leé la disponibilidad del libro
                 ## basados en la etiqueta p con las clases css instock availability
@@ -209,7 +211,7 @@ if __name__ == '__main__':
    # Número de páginas a leer. El sitio presenta la información por páginas
    # por eso se toma una muestra de las diez páginas iniciales
    # El número máximo de páginas es 50
-   raw_data = web_scraping(20)
+   raw_data = web_scraping(2)
 
    # Agrega una columna númerica para correlacionar con el rango
    new_data = limpieza_datos(raw_data)
