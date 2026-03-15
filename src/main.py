@@ -211,7 +211,7 @@ if __name__ == '__main__':
    # Número de páginas a leer. El sitio presenta la información por páginas
    # por eso se toma una muestra de las diez páginas iniciales
    # El número máximo de páginas es 50
-   raw_data = web_scraping(2)
+   raw_data = web_scraping(50)
 
    # Agrega una columna númerica para correlacionar con el rango
    new_data = limpieza_datos(raw_data)
